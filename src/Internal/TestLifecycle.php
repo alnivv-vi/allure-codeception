@@ -347,8 +347,7 @@ final class TestLifecycle implements TestLifecycleInterface
             );
         }
         /** @var mixed $humanizedAction */
-        $stepName = $step->getName();
-        $humanizedAction = (is_string($stepName)) ? $stepName : $step->getHumanizedActionWithoutArguments();
+        $humanizedAction = $step->getHumanizedActionWithoutArguments();
         $this->lifecycle->updateStep(
             fn (StepResult $s) => $s
                 ->setName(is_string($humanizedAction) ? $humanizedAction : null)
